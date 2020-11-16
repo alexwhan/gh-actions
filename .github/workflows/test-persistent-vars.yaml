@@ -16,9 +16,9 @@ jobs:
 
       - name: Set var
         run: |
-        echo $DATA_CHANGED
-        export DATA_CHANGED: 1
-        echo $DATA_CHANGED
+          echo $DATA_CHANGED
+          export DATA_CHANGED: 1
+          echo $DATA_CHANGED
 
       - name: Run if var
         if: ${{ $DATA_CHANGED == 1}}

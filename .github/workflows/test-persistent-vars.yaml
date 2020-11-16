@@ -1,0 +1,25 @@
+name: Testing setting env vars between steps
+
+on: [push, workflow_dispatch]
+
+jobs:
+
+  testvar:
+
+    runs-on: ubuntu-latest
+
+    env:
+
+      DATA_CHANGED: 0
+
+    steps:
+
+      - name: Set var
+      run: |
+        echo $DATA_CHANGED
+        export DATA_CHANGED: 1
+        echo $DATA_CHANGED
+
+      - name: Run if var
+        if: ${{ $DATA_CHANGED == 1}}
+        run: echo "The data has changed"

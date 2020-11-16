@@ -15,7 +15,7 @@ jobs:
     steps:
 
       - name: Set var
-      run: |
+        run: |
         echo $DATA_CHANGED
         export DATA_CHANGED: 1
         echo $DATA_CHANGED

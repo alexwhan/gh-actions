@@ -17,7 +17,7 @@ jobs:
       - name: Set var
         run: |
           echo $DATA_CHANGED
-          export DATA_CHANGED=1
+          echo "DATA_CHANGE=1" >> $GITHUB_ENV
           echo $DATA_CHANGED
 
       - name: Run if var
